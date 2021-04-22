@@ -1,9 +1,22 @@
 *{
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:root{
+  --red: #c20f12;
+  --yellow: #efc21e;
+  --white: #fff;
+}
+body {
+  background-image: url(./img/bg-produtos.png);
+  color: var(--white);
 }
 
 h1 {
     margin-right: 5%;
+    color: var(--red);
 }
 
 input {
@@ -12,6 +25,20 @@ input {
     border-radius: 1rem;
 
 }
+
+#send {
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--red);
+  border: none;
+  color: #f1f1f1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
 .overlay {
     height: 100%;
     width: 0;
@@ -54,9 +81,13 @@ input {
   }
   
 header {
+    margin: 0;
     width: 100%;
-    background-color: red;
+    background-color: var(--yellow);
     padding: 0.5rem;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
 }
 
 .menuIcon {
@@ -67,23 +98,11 @@ header {
   .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: rgb(233, 233, 233);
+    background-color: var(--red);
     margin: 6px 0;
     transition: 0.2s;
   }
   
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-  }
-  
-  .change .bar2 {opacity: 0;}
-  
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-  }
-
 .headerWhrapper{
     display: flex;
     align-items: center;
@@ -101,6 +120,10 @@ header {
     text-align: center;
 }
 
+.description img{
+  max-width: 100%;
+}
+
 .filterProductsWhrapper {
     margin-top: 3rem;
     display: flex;
@@ -113,8 +136,14 @@ header {
 
 .cardapio {
     margin-top: 3rem;
-   ;
+       
 }
+
+/* pratos */
+.imageItem img {
+  max-width: 20rem;
+  max-height: 20rem;
+} 
 
 .titleItemWhrapper{
     display: flex;
@@ -135,7 +164,6 @@ header {
 footer {
     position: fixed;
     overflow: hidden;
-    bottom: 0;
     width: 100%;
     background-color: red;
     padding: 0.5rem;
