@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+}
+
+h1 {
+    margin-right: 5%;
+}
+
+input {
+    height: 3rem;
+    width: 100%;
+    border-radius: 1rem;
+
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+header {
+    width: 100%;
+    background-color: red;
+    padding: 0.5rem;
+}
+
+.menuIcon {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(233, 233, 233);
+    margin: 6px 0;
+    transition: 0.2s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+.headerWhrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.filterProductsWhrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.description {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.filterProductsWhrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+}
+
+.cardapio {
+    margin-top: 3rem;
+   ;
+}
+
+.titleItemWhrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 3rem;
+}
+
+.containerItem{
+    margin: 1rem;
+    border-bottom: solid 1px black ;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+footer {
+    position: fixed;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    padding: 0.5rem;
+}
+
+.footerWhrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
