@@ -2,222 +2,80 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style.css" />
-        <title>Cardápio | Burger</title>
-    </head>
-    <body>
-        <div id="menuOptions" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-                >&times;</a
-            >
-            <div class="overlay-content">
-                <a href="#mac" onclick="closeNav()">Massas</a>
-                <a href="#trioBurgers" onclick="closeNav()">Trio Burger</a>
-                <a href="#fries" onclick="closeNav()">Batatas Fritas</a>
-                <a href="#drinks" onclick="closeNav()">Bebidas</a>
-                <a href="#burger" onclick="closeNav()">Burgers</a>
-                <a href="#" onclick="closeNav()">Nosso endereço</a>
-            </div>
-        </div>
 
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,900;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/estilo.css" />
+        <title>Minas Burger</title>
+    </head>
+
+    <body>
         <header>
-            <div class="headerWhrapper">
-                <div
-                    class="menuIcon"
-                    onclick="openNav()"
-                    onclick="menuIcon(this)"
-                >
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
+            <div class="container-flex">
                 <h1>Minas Burger</h1>
+                <button id="enviar">ENVIAR PEDIDO</button>
             </div>
         </header>
 
         <div class="description">
-           <img src="./img/header.jpg">
+            <img src="./img/header.jpg" width="100%" />
         </div>
 
-        <!-- <div class="listProducts">
-            <div class="filterProductsWhrapper">
-                <div class="filterProducts">
+        <div id="hightlight">
+            <button id="close-btn" onclick="closePromo()">&times;</button>
+            <div class="promo">
+                <h4>Sugestão do Dia</h4>
+                <h3>Minas Maxx</h3>
+                <div class="container">
+                    <img
+                        src="./img/minas-max.png"
+                        class="promo-img"
+                        width="300px"
+                    />
+                    <div>
+                        <h5>TRIO</h5>
+                        <h3>R$ <span>26,50</span></h3>
+                    </div>
+                </div>
+
+                <div class="description">
                     <span>
-                        <input
-                            type="text"
-                            name="filterProducts"
-                            placeholder="Quer pedir o que?"
-                        />
-                    </span>
-                </div>
-                <div class="filterCategories">
-                    <span>
-                        <input
-                            type="text"
-                            name="filterCategories"
-                            placeholder="Filtre por Categoria"
-                        />
-                    </span>
-                </div>
-            </div> -->
-
-            <div class="cardapio">
-                <div id="mac">
-                    <div class="titleItemWhrapper">
-                        <img src="./img/mark.png" width="20px" />
-                        <h2 class="titleItem">Massas</h2>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Macarrão Médio</h4>
-                            <p id="description">
-                                Escolha sua massa e mais 6 ingredientes!
-                            </p>
-                            <h5 id="price">R$ 15,90</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="img/macarrao.png">
-                        </div>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Macarrão Grande</h4>
-                            <p id="description">
-                                Escolha sua massa e mais 8 ingredientes!
-                            </p>
-                            <h5 id="price">R$ 19,90</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="img/macarrao.png">
-                        </div>
-                    </div>
-                </div>
-                <div id="trioBurgers">
-                    <div class="titleItemWhrapper">
-                        <img src="./img/mark.png" width="20px" />
-                        <h2 class="titleItem">Trio Burgers</h2>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Trio Minas Maxx</h4>
-                            <p id="description">
-                                Pão brioche, hambúerger da casa 180g, 1 queijo
-                                cheddar, 1 queijo prato, tomate, alface
-                                americana e cebola roxa
-                            </p>
-                            <h5 id="price">R$ 26,50</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="img/minas-max.png">
-                        </div>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Trio Minas Premium</h4>
-                            <p id="description">
-                                Pão de mel e sêmola de milho, hambúerger da casa
-                                180g, 2 queijos cheddar, bacon e cebola
-                                caramelizada.
-                            </p>
-                            <h5 id="price">R$ 26,50</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="img/minas-premium-burger.png">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="fries">
-                    <div class="titleItemWhrapper">
-                        <img src="./img/mark.png" width="20px" />
-                        <h2 class="titleItem">Batatas Fritas</h2>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Batata do Trio</h4>
-                            <h5 id="price">R$ 5,00</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="./img/fries.png">
-                        </div>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Batata Mais</h4>
-                            <p id="description">Acompanha molho.</p>
-                            <h5 id="price">R$ 12,00</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="./img/friesPlus.png">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="drinks">
-                    <div class="titleItemWhrapper">
-                        <img src="./img/mark.png" width="20px" />
-                        <h2 class="titleItem">Bebidas</h2>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Refrigerante Lata 310ml</h4>
-                            <h5 id="price">R$ 4,50</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="./img/lata-refri.png">
-                        </div>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Refrigerante Garrafa 2L</h4>
-                            <h5 id="price">R$ 12,50</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="./img/garrafa.png">
-                        </div>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Suco Natural - Sabores</h4>
-                            <p id="description">Laranja, Morango, Caju, Limão, Cupuaçu.</p>
-                            <h5 id="price">R$ 8,50</h5>
-                        </div>
-                        <div class="imageItem">
-                            <img src="./img/suco.png">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="burger">
-                    <div class="titleItemWhrapper">
-                        <img src="./img/mark.png" width="20px" />
-                        <h2 class="titleItem">Burgers</h2>
-                    </div>
-                    <div class="containerItem">
-                        <div id="descriptionItem">
-                            <h4 id="name">Burger</h4>
-                            <p id="description">Descrição do Burger</p>
-                            <h5 id="price">Preço</h5>
-                        </div>
-                        <div class="imageItem">
-                            <p>imagem aqui</p>
-                        </div>
-                    </div>
+                        Pão brioche, hambúrguer da casa (180g), 1 queijo
+                        cheddar, 1 queijo prato, tomate, alface americana e
+                        cebola roxa</span
+                    >
                 </div>
             </div>
         </div>
-
-        <button id="send">ENVIAR PEDIDO</button>
-        <!-- <footer>
-            <div class="footerWhrapper">
-                <p>Endereço de Compra</p>
-                <button>Alterar</button>
+        <div class="conteudo" id="conteudo">
+            <div class="item-produto">
+                <div class="produto">
+                    <div class="container-flex container-collum">
+                        <div class="cod-produto">00</div>
+                        <div class="valor-produto">R$ 0.0</div>
+                    </div>
+                    <span class="desc-produto container-flex">
+                        Pão, Salsicha, ...
+                    </span>
+                </div>
+                <div class="adicionais container-flex">
+                    <div class="valor-produto container-flex">R$ 0.0</div>
+                    <span class="desc-produto"> COMBO batata+refri </span>
+                </div>
+                <div class="add-produto">
+                    <span class="valor-parcial"> R$ 0.0 (x0) </span>
+                    <span class="botoes">
+                        <button class="bt-mais">+</button>
+                        <button class="bt-menos">-</button>
+                    </span>
+                </div>
             </div>
-        </footer> -->
-        <script src="script.js"></script>
+        </div>
+        <script src="js/itens.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

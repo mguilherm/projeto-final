@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <title>Gerenciar Produtos</title>
+        <link rel="stylesheet" href="css/estilo.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Gerenciar Produtos</h1>
+            <form id="formulario">
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="cod">cod:</label
+                        ><input id="cod" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="valor">Valor:</label
+                        ><input id="valor" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="grupo">Grupo:</label
+                        ><input id="grupo" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="categoria">Tipo:</label
+                        ><input
+                            id="categoria"
+                            type="text"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="descricao">Descrição</label>
+                        <input
+                            type="text"
+                            id="descricao"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="novo()"
+                        >
+                            Novo
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="gravar()"
+                        >
+                            Gravar
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            onclick="apagar()"
+                        >
+                            Apagar
+                        </button>
+                        <input type="hidden" id="index" />
+                    </div>
+                </div>
+            </form>
+            <br />
+            <table class="table table-hover">
+                <thead>
+                    <th width="5%">COD</th>
+                    <th width="20%">Grupo</th>
+                    <th width="70%">Descrição</th>
+                    <th width="5%">Valor</th>
+                </thead>
+                <tbody id="tb-corpo"></tbody>
+            </table>
+        </div>
+        <script src="js/itens.js"></script>
+        <script src="js/form.js"></script>
+    </body>
+</html>

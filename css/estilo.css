@@ -1,0 +1,342 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+
+}
+:root{
+    --red: #c20f12;
+    --yellow: #efc21e;
+    --white: #fff;
+  }
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0px;
+    background-color: var(--yellow);
+    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+
+    color: var(--red);
+    font-weight: 600;
+
+}
+
+h1 span {
+    background-color: var(--red);
+    color: var(--white);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container-flex{
+    display: flex;
+    align-items: center;
+}
+
+.container-collum {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.description{
+    margin-top: 3rem;
+
+}
+
+#enviar {
+    background-color: var(--red);
+    color: var(--white);
+    position: fixed;
+    right: 12%;
+    top: .85rem;
+    font-size: 22px;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    
+}
+
+#hightlight{
+    position: fixed;
+    color: var(--white);
+    z-index: 2;
+    top: 25%;
+    width: 40%;
+    height: 30rem;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: rgb(105, 0, 0);
+    border-radius: 5rem;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+.conteudo {
+    padding-left: 12%;
+    padding-right: 12%;
+    margin-top: 6rem;
+}
+
+h2 {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 3rem;
+    background-color: rgba(128, 128, 128, 0.205);
+  
+}
+
+h2 span {
+    
+    font-size: 1rem;
+    position: absolute;
+    right: 3rem;
+    top: 1.3rem;
+    color: var(--red)
+}
+
+.produto {
+    background-color: #f2f2f2;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer0;
+    margin-bottom: 0.5rem;
+    
+}
+
+.produto .cod-produto {
+
+    background-color:var(--red);
+    color: var(--white);
+    width: 15rem;
+    text-align: center;
+    font-size: 27px;
+    
+
+}
+
+.produto .valor-produto {
+
+    background-color: var(--yellow);
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+   
+}
+
+.produto .desc-produto {
+   margin-right: 1rem;
+   margin-left: 1rem;
+   font-size: 1rem;
+   text-align: right;
+   text-transform: capitalize;
+   padding: 0.5rem;
+
+  
+}
+
+.adicionais {
+    background-color: #f2f2f2;
+    position: relative;
+    height: 2rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.adicionais .valor-produto {
+    position: absolute;
+    background-color: var(--yellow);
+    color: black;
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.adicionais .desc-produto {
+    padding-left: 20.5%;
+}
+
+.promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.promo h3{
+    color: var(--yellow);
+    font-size: 3rem;
+    text-transform:uppercase;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    text-align: center;
+ 
+}
+
+#price{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.container h5{
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    position: absolute;
+}
+
+.container h3 {
+    margin-top: 0rem;
+    position: relative;
+    
+
+}
+
+.container h3 span{
+    font-size: 4.6rem;
+}
+
+h4{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+#close-btn{
+    border-style: none;
+    color: var(--white);
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 670px) {
+    #enviar {
+        bottom: 0px;
+        left: 0px;
+        top: 93%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    h1 {
+        padding-left: 2%;
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+    
+    .produto .cod-produto {
+        width: 5rem;
+        
+    }
+
+    .container-collum{
+        justify-content: center;
+    }
+
+    .conteudo {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .adicionais .valor-produto {
+        width: 33%;
+    }
+
+    .adicionais .desc-produto {
+        padding-left: 33.5%;
+        
+    }
+
+}
+
+.add-produto {
+    height: 1.5rem;
+    background-color: rgb(194, 194, 194);
+    position: relative;
+    text-align: center;
+    display: none;
+    margin-bottom: 0.5rem;
+
+}
+
+.botoes {
+    position: absolute;
+    right: 10px;
+    top: -8px;
+}
+
+.botoes button {
+    width: 25px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.bt-mais {
+    background-color: var(--yellow);
+    color: black;
+}
+
+.bt-menos {
+    background-color: var(--red);
+    color: var(--white);
+
+}
+
+td span{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 0px 4px 4px 4px;
+    margin: 0px;
+    cursor: pointer;
+    margin-left: 4px;
+    border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 420px) {
+    .description{
+        display: none;
+    }
+
+    .conteudo h2 {
+        position:inherit;        
+    }
+
+}
