@@ -1,3 +1,15 @@
+function menuIcon(x) {
+    x.classList.toggle("change");
+}
+
+function openNav() {
+    document.getElementById("menuOptions").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("menuOptions").style.width = "0%";
+}
+
 qtProduto = 0;
 function addProduto(i, add) {
     p = lsProdutos[i];
@@ -70,6 +82,63 @@ function carregaEvento(acc) {
     }
 }
 
+// *********Abrir e Fechar Modal**************
+
+btSend = document.getElementById("enviar");
+btSend.addEventListener("click", function () {
+    bodyModal = " ";
+    total = 0;
+
+    for (i in lsProdutos) {
+        p = lsProdutos[i];
+        if (p.qt > 0) {
+            totalP = Number(p.qt * p.valor).toFixed(2);
+            total += Number(totalP);
+            p.cod == ""
+                ? (bodyModal += `${p.descricao}`)
+                : (bodyModal += `COD ${p.cod}`);
+
+            bodyModal += `<br> Preço unitário: R$ ${p.valor.toFixed(
+                2
+            )} <br> Total do produto: R$ ${totalP}<br><br> `;
+        }
+    }
+    toFooter = document.getElementById("footer-modal");
+    if (total == 0) {
+        bodyModal = "Escolha ao menos um produto!";
+        document.getElementById("personal-informations").style.display = "none";
+        toFooter.innerHTML = "";
+    } else {
+        total = total.toFixed(2);
+
+        bodyModal += `---------------------------<br>Total a Pagar = R$ ${total}<br>`;
+
+        document.getElementById("personal-informations").style.display =
+            "block";
+
+        toFooter.innerHTML = `<button onclick="finishShop()" class="send-request">CONTINUAR</button>`;
+    }
+    document.getElementsByClassName("body-modal")[0].innerHTML = bodyModal;
+
+    modal = document.getElementById("modal-send");
+    modal.style.display = "block";
+    return modal;
+});
+
+btClose = document.getElementById("toClose-btn");
+btClose.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+function finishShop() {
+    clientName = document.getElementById("clientName");
+    adress = document.getElementById("adress");
+
+    if (clientName == "") {
+        alert("Informe seu nome!");
+    }
+}
+
 carregarProdutos();
 acc = document.getElementsByClassName("adicionais");
 carregaEvento(acc);
@@ -77,7 +146,21 @@ acc = document.getElementsByClassName("produto");
 carregaEvento(acc);
 
 function closePromo() {
-    document
-        .getElementById("hightlight")
-        .setAttribute("style", "display: none;");
+    close = document.getElementById("hightlight");
+    close.style.display = "none";
 }
+
+function openPromo() {
+    setTimeout(() => {
+        open = document.getElementById("hightlight");
+        open.style.display = "block";
+    }, 5000);
+}
+
+window.onclick = function (e) {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+openPromo();

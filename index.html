@@ -14,9 +14,56 @@
     </head>
 
     <body>
+        <div id="menuOptions" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
+            >
+            <div class="overlay-content">
+                <a href="#space" onclick="closeNav()">Cardápio</a>
+                <a
+                    href="https://www.instagram.com/minasburger/"
+                    onclick="closeNav()"
+                    target="_blank"
+                    >Instagram</a
+                >
+                <a
+                    href="https://www.facebook.com/minasburger"
+                    onclick="closeNav()"
+                    target="_blank"
+                    >Facebook</a
+                >
+
+                <a
+                    href="https://goo.gl/maps/XKhjnk7rDnG5a8R3A"
+                    target="_blank"
+                    onclick="closeNav()"
+                    >Nosso endereço</a
+                >
+                <a
+                    id="adm"
+                    href="./form.html"
+                    onclick="closeNav()"
+                    target="_blank"
+                    >Acesso Administrativo</a
+                >
+            </div>
+        </div>
+
         <header>
             <div class="container-flex">
-                <h1>Minas Burger</h1>
+                <div class="headerWhrapper">
+                    <div
+                        class="menuIcon"
+                        onclick="openNav()"
+                        onclick="menuIcon(this)"
+                    >
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+
+                    <h1>Minas Burger</h1>
+                </div>
                 <button id="enviar">ENVIAR PEDIDO</button>
             </div>
         </header>
@@ -28,7 +75,7 @@
         <div id="hightlight">
             <button id="close-btn" onclick="closePromo()">&times;</button>
             <div class="promo">
-                <h4>Sugestão do Dia</h4>
+                <h4>Conheça o novo</h4>
                 <h3>Minas Maxx</h3>
                 <div class="container">
                     <img
@@ -51,6 +98,7 @@
                 </div>
             </div>
         </div>
+        <span id="space"></span>
         <div class="conteudo" id="conteudo">
             <div class="item-produto">
                 <div class="produto">
@@ -75,6 +123,40 @@
                 </div>
             </div>
         </div>
+
+        <div id="modal-send">
+            <div class="title-modal">
+                <p>Pedido</p>
+                <span id="toClose-btn">&times;</span>
+            </div>
+            <div class="body-modal-whrapper">
+                <div class="body-modal">
+                    <span>Escolha ao menos um produto!</span>
+                </div>
+
+                <div
+                    id="personal-informations"
+                    class="body-modal container-collum"
+                >
+                    <input
+                        id="clientName"
+                        type="text"
+                        placeholder="Digite seu Nome"
+                    />
+                    <input
+                        id="adress"
+                        type="text"
+                        placeholder="Digite seu Endereço"
+                    />
+                    <span>
+                        Clique em "CONTINUAR" para enviar seu pedido via
+                        Whatsapp!
+                    </span>
+                </div>
+            </div>
+            <div class="footer-modal" id="footer-modal"></div>
+        </div>
+
         <script src="js/itens.js"></script>
         <script src="js/index.js"></script>
     </body>
