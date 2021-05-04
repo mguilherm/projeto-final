@@ -142,10 +142,12 @@ function finishShop() {
         pedido = bodyModal;
 
         pedido =
-            `Olá, meu nome é *${clientName}*, este é meu pedido: <br><br>` +
+            `Olá, meu nome é *${clientName.trim()}*, este é meu pedido: <br><br>` +
             pedido;
         pedido +=
-            adress != "" ? `<br>Meu endereço é *${adress}*` : (pedido += "");
+            adress != ""
+                ? `<br>Meu endereço é *${adress.trim()}*`
+                : (pedido += "");
         phone = "+55061983420512";
 
         pedido = pedido.replaceAll("<br>", "\n");
