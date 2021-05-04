@@ -86,7 +86,7 @@ function carregaEvento(acc) {
 
 btSend = document.getElementById("enviar");
 btSend.addEventListener("click", function () {
-    bodyModal = " ";
+    bodyModal = "";
     total = 0;
 
     for (i in lsProdutos) {
@@ -94,6 +94,7 @@ btSend.addEventListener("click", function () {
         if (p.qt > 0) {
             totalP = Number(p.qt * p.valor).toFixed(2);
             total += Number(totalP);
+            bodyModal += `${p.qt}X `;
             p.cod == ""
                 ? (bodyModal += `${p.descricao}`)
                 : (bodyModal += `COD ${p.cod}`);
@@ -110,7 +111,7 @@ btSend.addEventListener("click", function () {
         toFooter.innerHTML = "";
     } else {
         total = total.toFixed(2);
-
+        pedido = "";
         bodyModal += `---------------------------<br>Total a Pagar = R$ ${total}<br>`;
 
         document.getElementById("personal-informations").style.display =
@@ -122,20 +123,37 @@ btSend.addEventListener("click", function () {
 
     modal = document.getElementById("modal-send");
     modal.style.display = "block";
-    return modal;
 });
 
 btClose = document.getElementById("toClose-btn");
 btClose.addEventListener("click", function () {
+    modal = document.getElementById("modal-send");
     modal.style.display = "none";
 });
 
 function finishShop() {
     clientName = document.getElementById("clientName");
-    adress = document.getElementById("adress");
 
-    if (clientName == "") {
+    if (clientName.value == "") {
         alert("Informe seu nome!");
+    } else {
+        clientName = document.getElementById("clientName").value;
+        adress = document.getElementById("adress").value;
+        pedido = bodyModal;
+
+        pedido =
+            `Olá, meu nome é *${clientName}*, este é meu pedido: <br><br>` +
+            pedido;
+        pedido +=
+            adress != "" ? `<br>Meu endereço é *${adress}*` : (pedido += "");
+        phone = "+55061983420512";
+
+        pedido = pedido.replaceAll("<br>", "\n");
+        pedido = encodeURI(pedido);
+
+        toLink = `https://api.whatsapp.com/send?phone=${phone}&text=${pedido}`;
+
+        window.open(toLink, "_blank");
     }
 }
 
@@ -152,12 +170,13 @@ function closePromo() {
 
 function openPromo() {
     setTimeout(() => {
-        open = document.getElementById("hightlight");
-        open.style.display = "block";
+        toOpen = document.getElementById("hightlight");
+        toOpen.style.display = "block";
     }, 5000);
 }
 
 window.onclick = function (e) {
+    modal = document.getElementById("modal-send");
     if (e.target == modal) {
         modal.style.display = "none";
     }
